@@ -26,6 +26,46 @@ class SignupViewController: UIViewController {
             if let passwordR = self.passwordText.text{
                 if let passwordConfirmedR = self.passwordConfirmedText.text{
                     
+                    let payload = ["email": emailR] as [String: Any]
+                    if let jsonData = try? JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted){
+                        let url = URL(string: "https://api-iddog.idwall.co/signup")
+                        var request = URLRequest(url: url!)
+                        request.httpMethod = "POST"
+                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                        request.httpBody = jsonData
+                        
+                        URLSession.shared.dataTask(with: request) { (data, response, error) in
+                            if error == nil{
+                                if let dataReturned = data{
+                                    do{
+                                        if let objectJson = try JSONSerialization.jsonObject(with: dataReturned, options: []) as? [String: AnyObject]{
+                                            print(objectJson)
+                                            if let user = objectJson["user"]{
+                                                if let token = user["token"]{
+                                                    print(token)
+                                                }
+                                            }
+                                        }
+                                    }catch{
+                                        print("Erro ao formatar o retorno")
+                                    }
+                                }
+                                /*guard let data = data else {print("Empty data"); return}
+                                if let str = String(data: data, encoding: .utf8){
+                                    print(str)
+                                }*/
+                            } else{
+                                print(error!.localizedDescription)
+                                return
+                            }
+                            
+                        }.resume()
+                    }
+                    /*
+                     POST
+                    curl "https://api-iddog.idwall.co/signup" \
+                    -H "Content-Type: application/json" \
+                    -d '{ "email": "your@email.com" }'*/
                 }
             }
         }

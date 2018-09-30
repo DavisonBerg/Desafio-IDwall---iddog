@@ -42,7 +42,13 @@ class SignupViewController: UIViewController {
                                             print(objectJson)
                                             if let user = objectJson["user"]{
                                                 if let token = user["token"]{
-                                                    print(token)
+                                                    
+                                                    print("Usuário criado com sucesso")
+                                                    let destVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                                    destVC.passToken = token as! String
+                                                    DispatchQueue.main.async {
+                                                        self.navigationController?.pushViewController(destVC, animated: true)
+                                                    }
                                                 }
                                             }
                                         }
@@ -50,26 +56,17 @@ class SignupViewController: UIViewController {
                                         print("Erro ao formatar o retorno")
                                     }
                                 }
-                                /*guard let data = data else {print("Empty data"); return}
-                                if let str = String(data: data, encoding: .utf8){
-                                    print(str)
-                                }*/
                             } else{
                                 print(error!.localizedDescription)
                                 return
                             }
-                            
                         }.resume()
                     }
-                    /*
-                     POST
-                    curl "https://api-iddog.idwall.co/signup" \
-                    -H "Content-Type: application/json" \
-                    -d '{ "email": "your@email.com" }'*/
                 }
             }
         }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)

@@ -13,7 +13,9 @@
 		2D5641B6216107200023E8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5641B5216107200023E8F3 /* Assets.xcassets */; };
 		2D5641B9216107200023E8F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5641B7216107200023E8F3 /* LaunchScreen.storyboard */; };
 		2D5641C121610B7A0023E8F3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C021610B7A0023E8F3 /* SignupViewController.swift */; };
-		2D5641C3216178E60023E8F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C2216178E60023E8F3 /* HomeViewController.swift */; };
+		2D5641C52161BDD30023E8F3 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C42161BDD30023E8F3 /* HomeCollectionViewController.swift */; };
+		2D5641C72161C72E0023E8F3 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C62161C72E0023E8F3 /* HomeCollectionViewCell.swift */; };
+		2D5641C92161DB7D0023E8F3 /* Dogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C82161DB7D0023E8F3 /* Dogs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		2D5641B8216107200023E8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D5641BA216107200023E8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D5641C021610B7A0023E8F3 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		2D5641C2216178E60023E8F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2D5641C42161BDD30023E8F3 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		2D5641C62161C72E0023E8F3 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2D5641C82161DB7D0023E8F3 /* Dogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dogs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				2D5641AE2161071F0023E8F3 /* AppDelegate.swift */,
 				2D5641B02161071F0023E8F3 /* ViewController.swift */,
 				2D5641C021610B7A0023E8F3 /* SignupViewController.swift */,
-				2D5641C2216178E60023E8F3 /* HomeViewController.swift */,
+				2D5641C42161BDD30023E8F3 /* HomeCollectionViewController.swift */,
+				2D5641C62161C72E0023E8F3 /* HomeCollectionViewCell.swift */,
+				2D5641C82161DB7D0023E8F3 /* Dogs.swift */,
 				2D5641B22161071F0023E8F3 /* Main.storyboard */,
 				2D5641B5216107200023E8F3 /* Assets.xcassets */,
 				2D5641B7216107200023E8F3 /* LaunchScreen.storyboard */,
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5641C72161C72E0023E8F3 /* HomeCollectionViewCell.swift in Sources */,
 				2D5641C121610B7A0023E8F3 /* SignupViewController.swift in Sources */,
 				2D5641B12161071F0023E8F3 /* ViewController.swift in Sources */,
 				2D5641AF2161071F0023E8F3 /* AppDelegate.swift in Sources */,
-				2D5641C3216178E60023E8F3 /* HomeViewController.swift in Sources */,
+				2D5641C92161DB7D0023E8F3 /* Dogs.swift in Sources */,
+				2D5641C52161BDD30023E8F3 /* HomeCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

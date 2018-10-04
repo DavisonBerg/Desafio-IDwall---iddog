@@ -44,7 +44,7 @@ class SignupViewController: UIViewController {
                                                 if let token = user["token"]{
                                                     
                                                     print("Usuário criado com sucesso")
-                                                    let destVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeCollectionViewController") as! HomeCollectionViewController
+                                                    let destVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                                                     destVC.passToken = token as! String
                                                     DispatchQueue.main.async {
                                                         self.navigationController?.pushViewController(destVC, animated: true)

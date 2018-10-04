@@ -10,38 +10,38 @@ import UIKit
 import ObjectMapper
 import Foundation
 import Alamofire
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "customCell"
 
 class HomeCollectionViewController: UICollectionViewController {
 
-    var passToken = ""
+    /*var passToken = ""
     var husky : String = "husky"
     var labrador : String = "labrador"
     var hound : String = "hound"
     var pug : String = "pug"
-    var dogObj : [Dogs]?
+    var dogObj = [Dogs]()
     public var errorCode: Int?
     
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async {
+        
             self.fetchItemsFromApi(dog: self.husky, key: self.passToken)
             self.fetchItemsFromApi(dog: self.labrador, key: self.passToken)
             self.fetchItemsFromApi(dog: self.hound, key: self.passToken)
             self.fetchItemsFromApi(dog: self.pug, key: self.passToken)
-        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(passToken)
-        
-
+        self.collectionView?.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        self.collectionView?.dataSource = self
+        self.collectionView?.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -55,8 +55,9 @@ class HomeCollectionViewController: UICollectionViewController {
                 switch response.result{
                 case .success(let responseString):
                     let itemResponse = Dogs(JSONString: "\(responseString)")
-                    self.dogObj?.append(itemResponse!)
+                    self.dogObj.append(itemResponse!)
                     print((itemResponse?.category)!)
+                    print((itemResponse?.ltImageURL)!)
                 case .failure(let error):
                     self.errorCode = error as? Int
                 }
@@ -64,38 +65,6 @@ class HomeCollectionViewController: UICollectionViewController {
         }
     }
     
-    /*func apiResponse(dog : String) {
-        let url = URL(string: "https://api-iddog.idwall.co/feed?category=\(dog)")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(passToken, forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if error == nil{
-                if let dataReturned = data{
-                    
-                    do {
-                        if let objectJson = try JSONSerialization.jsonObject(with: dataReturned, options: []) as? [String: AnyObject]{
-                            print(objectJson)
-                            if let category = objectJson["category"]{
-                                if let listImage = category["list"]{
-                                    
-                                }
-                            }
-                        }
-                        
-                    } catch let myJSONError {
-                        print(myJSONError)
-                    }
-                }
-            }else{
-                print(error!.localizedDescription)
-                return
-            }
-            }.resume()
-    }*/
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -113,21 +82,27 @@ class HomeCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 2
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return (self.dogObj.count)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! HomeCollectionViewCell
         
+        cell.dogBreedLabel.text = dogObj[indexPath.row].category
+//        let poster_path = dogObj[indexPath.row].ltImageURL![0]
+//        let dogImageURL = URL(string: poster_path)
+//        if let dataImage = NSData(contentsOf: dogImageURL!){
+//            cell.dogImage.image = UIImage(data: dataImage as Data)
+//        }
         // Configure the cell
     
         return cell
@@ -163,5 +138,5 @@ class HomeCollectionViewController: UICollectionViewController {
     
     }
     */
-
+*/
 }

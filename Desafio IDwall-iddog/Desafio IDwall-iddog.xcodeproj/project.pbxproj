@@ -16,7 +16,7 @@
 		2D5641C52161BDD30023E8F3 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C42161BDD30023E8F3 /* HomeCollectionViewController.swift */; };
 		2D5641C72161C72E0023E8F3 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C62161C72E0023E8F3 /* HomeCollectionViewCell.swift */; };
 		2D5641C92161DB7D0023E8F3 /* Dogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641C82161DB7D0023E8F3 /* Dogs.swift */; };
-		2D5641CC2165A3420023E8F3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641CB2165A3420023E8F3 /* APIManager.swift */; };
+		2D5641CE2165D3240023E8F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5641CD2165D3240023E8F3 /* HomeViewController.swift */; };
 		6A87F4F6386CCC7229632D5C /* Pods_Desafio_IDwall_iddog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5E13046E69C90BAE734E2F /* Pods_Desafio_IDwall_iddog.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		2D5641C42161BDD30023E8F3 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		2D5641C62161C72E0023E8F3 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2D5641C82161DB7D0023E8F3 /* Dogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dogs.swift; sourceTree = "<group>"; };
-		2D5641CB2165A3420023E8F3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		2D5641CD2165D3240023E8F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		429EA10787ED480C92BFB4C6 /* Pods-Desafio IDwall-iddog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio IDwall-iddog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio IDwall-iddog/Pods-Desafio IDwall-iddog.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5E13046E69C90BAE734E2F /* Pods_Desafio_IDwall_iddog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_IDwall_iddog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8FEDCC25C4C4BE3EDB471D /* Pods-Desafio IDwall-iddog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio IDwall-iddog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio IDwall-iddog/Pods-Desafio IDwall-iddog.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,11 +77,11 @@
 				2D5641C42161BDD30023E8F3 /* HomeCollectionViewController.swift */,
 				2D5641C62161C72E0023E8F3 /* HomeCollectionViewCell.swift */,
 				2D5641C82161DB7D0023E8F3 /* Dogs.swift */,
-				2D5641CB2165A3420023E8F3 /* APIManager.swift */,
 				2D5641B22161071F0023E8F3 /* Main.storyboard */,
 				2D5641B5216107200023E8F3 /* Assets.xcassets */,
 				2D5641B7216107200023E8F3 /* LaunchScreen.storyboard */,
 				2D5641BA216107200023E8F3 /* Info.plist */,
+				2D5641CD2165D3240023E8F3 /* HomeViewController.swift */,
 			);
 			path = "Desafio IDwall-iddog";
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 				2D5641B12161071F0023E8F3 /* ViewController.swift in Sources */,
 				2D5641AF2161071F0023E8F3 /* AppDelegate.swift in Sources */,
 				2D5641C92161DB7D0023E8F3 /* Dogs.swift in Sources */,
+				2D5641CE2165D3240023E8F3 /* HomeViewController.swift in Sources */,
 				2D5641C52161BDD30023E8F3 /* HomeCollectionViewController.swift in Sources */,
-				2D5641CC2165A3420023E8F3 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

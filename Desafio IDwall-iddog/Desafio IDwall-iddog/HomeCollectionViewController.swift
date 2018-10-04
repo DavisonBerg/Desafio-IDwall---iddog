@@ -7,43 +7,35 @@
 //
 
 import UIKit
-
+import ObjectMapper
+import Foundation
+import Alamofire
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
 
     var passToken = ""
-    var hound : String = ""
+    var husky : String = "husky"
+    var labrador : String = "labrador"
+    var hound : String = "hound"
+    var pug : String = "pug"
+    var dogObj : [Dogs]?
+    public var errorCode: Int?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.fetchItemsFromApi(dog: self.husky, key: self.passToken)
+            self.fetchItemsFromApi(dog: self.labrador, key: self.passToken)
+            self.fetchItemsFromApi(dog: self.hound, key: self.passToken)
+            self.fetchItemsFromApi(dog: self.pug, key: self.passToken)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(passToken)
-        let url = URL(string: "https://api-iddog.idwall.co/feed")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(passToken, forHTTPHeaderField: "Authorization")
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if error == nil{
-                if let dataReturned = data{
-                    do{
-                        
-                        let objectJson = try JSONDecoder().decode(Dogs.self, from: dataReturned)
-                         print(objectJson)
-                        
-                        /*let result = try JSONDecoder().decode(MyCodable.self, from: data)
-                         if let objectJson = try JSONSerialization.jsonObject(with: dataReturned, options: []) as? [String: AnyObject]{
-                            print(objectJson)
-                         self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? "Default Appleseed"
-                        }*/
-                    }catch{
-                        print("Erro ao formatar o retorno")
-                    }
-                }
-            }else{
-                print(error!.localizedDescription)
-                return
-            }
-        }.resume()
+        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -52,6 +44,57 @@ class HomeCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func fetchItemsFromApi(dog : String, key : String) {
+        let headers: HTTPHeaders = [
+            "Authorization" : key,
+            "Content-Type" : "application/json"
+        ]
+        DispatchQueue.main.async {
+            Alamofire.request("https://api-iddog.idwall.co/feed?category=\(dog)", headers: headers).responseString(completionHandler: { (response) in
+                switch response.result{
+                case .success(let responseString):
+                    let itemResponse = Dogs(JSONString: "\(responseString)")
+                    self.dogObj?.append(itemResponse!)
+                    print((itemResponse?.category)!)
+                case .failure(let error):
+                    self.errorCode = error as? Int
+                }
+            })
+        }
+    }
+    
+    /*func apiResponse(dog : String) {
+        let url = URL(string: "https://api-iddog.idwall.co/feed?category=\(dog)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(passToken, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if error == nil{
+                if let dataReturned = data{
+                    
+                    do {
+                        if let objectJson = try JSONSerialization.jsonObject(with: dataReturned, options: []) as? [String: AnyObject]{
+                            print(objectJson)
+                            if let category = objectJson["category"]{
+                                if let listImage = category["list"]{
+                                    
+                                }
+                            }
+                        }
+                        
+                    } catch let myJSONError {
+                        print(myJSONError)
+                    }
+                }
+            }else{
+                print(error!.localizedDescription)
+                return
+            }
+            }.resume()
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8780F617A0870A7AD8F6170D16C1F0DD"
+               BlueprintIdentifier = "BA3DA081514A56E347633C0B1AE956A9"
                BuildableName = "Pods_Desafio_IDwall_iddog.framework"
                BlueprintName = "Pods-Desafio IDwall-iddog"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8780F617A0870A7AD8F6170D16C1F0DD"
+            BlueprintIdentifier = "BA3DA081514A56E347633C0B1AE956A9"
             BuildableName = "Pods_Desafio_IDwall_iddog.framework"
             BlueprintName = "Pods-Desafio IDwall-iddog"
             ReferencedContainer = "container:Pods.xcodeproj">

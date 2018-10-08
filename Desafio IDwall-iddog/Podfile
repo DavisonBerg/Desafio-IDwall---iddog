@@ -6,9 +6,6 @@ target 'Desafio IDwall-iddog' do
   use_frameworks!
 
   # Pods for Desafio IDwall-iddog
-  pod 'ObjectMapper', '~> 3.1'
-  pod "PromiseKit"
-  pod 'Alamofire'
-  pod 'AlamofireImage'
+  
 
 end
